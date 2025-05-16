@@ -1,0 +1,116 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\Harpseal.ttf" />
+    <None Remove="Fonts\TimesNewRomanRegular.ttf" />
+    <None Remove="Image\122_icon.png" />
+    <None Remove="Image\calldoctor.jpg" />
+    <None Remove="Image\call_grad.png" />
+    <None Remove="Image\cancel.png" />
+    <None Remove="Image\clinic_grad.png" />
+    <None Remove="Image\conditions_grad.png" />
+    <None Remove="Image\contacts.jpg" />
+    <None Remove="Image\doctor1.webp" />
+    <None Remove="Image\doctor_icon.png" />
+    <None Remove="Image\doctor_right.webp" />
+    <None Remove="Image\email_grad.png" />
+    <None Remove="Image\employee.png" />
+    <None Remove="Image\employees.webp" />
+    <None Remove="Image\health.png" />
+    <None Remove="Image\hospital.webp" />
+    <None Remove="Image\how_to_use.png" />
+    <None Remove="Image\icon_address.png" />
+    <None Remove="Image\icon_card.png" />
+    <None Remove="Image\icon_contact_black.png" />
+    <None Remove="Image\map.jpg" />
+    <None Remove="Image\map_add.png" />
+    <None Remove="Image\menuwhite.png" />
+    <None Remove="Image\notebookGreen.png" />
+    <None Remove="Image\notebook_grad.png" />
+    <None Remove="Image\noteCancel.png" />
+    <None Remove="Image\out.png" />
+    <None Remove="Image\pencil.png" />
+    <None Remove="Image\po33fasad.jpg" />
+    <None Remove="Image\power_off.png" />
+    <None Remove="Image\right_2.png" />
+    <None Remove="Image\sale_grad.png" />
+    <None Remove="Image\smartphone.png" />
+    <None Remove="Image\user_icon.png" />
+    <None Remove="Image\way.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Fonts\TimesNewRomanRegular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\cancel.png" />
+    <Resource Include="Image\clinic_grad.png" />
+    <Resource Include="Image\conditions_grad.png" />
+    <Resource Include="Image\email_grad.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="iTextSharp" Version="5.5.13.4" />
+    <PackageReference Include="MailKit" Version="4.7.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Harpseal.ttf" />
+    <Resource Include="Image\122_icon.png" />
+    <Resource Include="Image\calldoctor.jpg" />
+    <Resource Include="Image\call_grad.png" />
+    <Resource Include="Image\contacts.jpg" />
+    <Resource Include="Image\doctor1.webp" />
+    <Resource Include="Image\doctor_icon.png" />
+    <Resource Include="Image\doctor_right.webp" />
+    <Resource Include="Image\employee.png" />
+    <Resource Include="Image\employees.webp" />
+    <Resource Include="Image\health.png" />
+    <Resource Include="Image\hospital.webp" />
+    <Resource Include="Image\how_to_use.png" />
+    <Resource Include="Image\icon_address.png" />
+    <Resource Include="Image\icon_card.png" />
+    <Resource Include="Image\icon_contact_black.png" />
+    <Resource Include="Image\map.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\map_add.png" />
+    <Resource Include="Image\menuwhite.png" />
+    <Resource Include="Image\notebookGreen.png" />
+    <Resource Include="Image\notebook_grad.png" />
+    <Resource Include="Image\noteCancel.png" />
+    <Resource Include="Image\out.png" />
+    <Resource Include="Image\pencil.png" />
+    <Resource Include="Image\po33fasad.jpg" />
+    <Resource Include="Image\power_off.png" />
+    <Resource Include="Image\right_2.png" />
+    <Resource Include="Image\sale_grad.png" />
+    <Resource Include="Image\smartphone.png" />
+    <Resource Include="Image\user_icon.png" />
+    <Resource Include="Image\way.png" />
+  </ItemGroup>
+
+</Project>

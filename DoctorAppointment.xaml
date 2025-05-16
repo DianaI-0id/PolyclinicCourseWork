@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="PolyclinicProjectKurs.DoctorAppointment"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PolyclinicProjectKurs"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="#18181f">
+        <Grid ShowGridLines="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.4*"/> 
+                <RowDefinition Height="1.4*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+
+            <!--Верхняя панель-->
+            <StackPanel Grid.Row="0">
+                <TextBlock Text="Запись к врачу" Margin="0 0 0 10"
+                    Style="{StaticResource TextBlockInfo}"
+                    FontSize="30"/>
+            </StackPanel>
+
+            <Grid ShowGridLines="False" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="155"/>
+                    <ColumnDefinition Width="155"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="ФИО врача" Grid.Column="0" Grid.Row="1" Style="{StaticResource TextBlockInfo}" FontSize="18" VerticalAlignment="Bottom" Margin="0 0 0 10"/>
+                <TextBlock Text="Специальность" Grid.Column="1" Grid.Row="1" Style="{StaticResource TextBlockInfo}" FontSize="18" VerticalAlignment="Bottom" Margin="0 0 0 10"/>
+                <TextBlock Text="Интервал приёма" Grid.Column="2" Grid.Row="1" Style="{StaticResource TextBlockInfo}" FontSize="18" VerticalAlignment="Bottom" Margin="0 0 0 10"/>
+            </Grid>
+
+
+            <ListBox ItemsSource="{Binding DoctorsList}" Grid.Row="2" Background="Transparent">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ShowGridLines="False">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <!-- Установка фиксированной ширины для каждого столбца -->
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="150"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Информация о враче -->
+                            <TextBlock Text="{Binding Doctorname}" Style="{StaticResource TextBlockInfo}" Foreground="#4B45D6"  Grid.Column="0" FontSize="15" Margin="0 0 10 0" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Speciality}" Style="{StaticResource TextBlockInfo}"  Grid.Column="1" FontSize="15" Margin="0 0 10 0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding Availabletimebefore}" Style="{StaticResource TextBlockInfo}"  Grid.Column="2" FontSize="15" Margin="0 0 20 0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                            <TextBlock Text="—" Style="{StaticResource TextBlockInfo}"  Grid.Column="2" Grid.ColumnSpan="2" FontSize="20" Margin="0 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Availabletimeafter}" Style="{StaticResource TextBlockInfo}"  Grid.Column="3" FontSize="15" Margin="20 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <Border Background="#4B45D6" Grid.Column="4" Margin="10">
+                                <Button  Content="ВЫБРАТЬ" Background="Transparent" BorderBrush="Transparent" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"
+                                         Click="ChooseDoctorButtonClick" Width="120" Height="30" VerticalAlignment="Center"/>
+                            </Border>
+                                
+                           
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Border>
+</UserControl>

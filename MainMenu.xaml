@@ -1,0 +1,141 @@
+﻿<UserControl x:Class="PolyclinicProjectKurs.MainMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PolyclinicProjectKurs"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="700">
+    <Border Background="#18181f">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="19*"/>
+                <RowDefinition Height="2000*"/>
+                <RowDefinition Height="19*"/>
+                <RowDefinition Height="151.621"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="14*"/>
+                <ColumnDefinition Width="11*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button BorderBrush="White" BorderThickness="3" Click="DoctorAppointment_ButtonClick" Grid.Row="1" Grid.Column="0" Margin="20 10 20 20"
+                        Content="Свободная запись к врачу" FontSize="23" FontWeight="ExtraBold">
+
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+
+                <Button.Background>
+                    <ImageBrush ImageSource="/Image/doctor1.webp" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+
+            <Button BorderBrush="White" BorderThickness="3" Click="CallDoctor_ButtonClick" Grid.Row="1" Grid.Column="1" Margin="8,10,23,20"
+                    Content="Вызов врача на дом" FontSize="23" FontWeight="ExtraBold" >
+
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+
+                <Button.Background>
+                    <ImageBrush ImageSource="/Image/calldoctor.jpg" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+
+            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top"
+                  Orientation="Horizontal" Height="150" Margin="0,10,0,0" Grid.RowSpan="2">
+
+                <!--Квадратики-->
+                <Button Margin="20 -10 0 0" Background="Transparent" BorderBrush="Transparent" Click="ContactsInfo_ButtonClick">
+
+                    <Border CornerRadius="20" Width="200" Height="130" HorizontalAlignment="Left"
+                            BorderBrush="White" BorderThickness="3">
+                        <Border.Background>
+                            <!--<ImageBrush ImageSource="/Image/contacts.jpg" 
+                        Stretch="UniformToFill" />-->
+                            <LinearGradientBrush>
+                                <GradientStop Color="#0EEA10" Offset="0.2"/>
+                                <GradientStop Color="#64E865" Offset="0.5"/>
+                                <GradientStop Color="#A4F1A4" Offset="0.8"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Image Source="/Image/icon_contact_black.png" Width="40" Height="40" Margin="0 0 0 0"/>
+                            <TextBlock Text="Контакты" 
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBold"
+                                   Style="{StaticResource TextBlockInfo}"
+                                   FontSize="20" Foreground="Black"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+
+
+
+                <Button Margin="20 -10 0 0" Background="Transparent" BorderBrush="Transparent" Click="ContactsInfo_ButtonClick">
+                    <Border CornerRadius="20" Width="200" Height="130" HorizontalAlignment="Left"
+                            BorderBrush="White" BorderThickness="3">
+                        <Border.Background>
+                            <!--<ImageBrush ImageSource="/Image/employees.webp" 
+                                        Stretch="UniformToFill" />-->
+                            <LinearGradientBrush>
+                                <GradientStop Color="#1A0AF3" Offset="0.2"/>
+                                <GradientStop Color="#493EDE" Offset="0.5"/>
+                                <GradientStop Color="#6E65E3" Offset="0.7"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Image Source="/Image/employee.png" Width="50" Height="50" Margin="0 0 0 0"/>
+                            <TextBlock Text="Мед. персонал" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBold"
+                                       Style="{StaticResource TextBlockInfo}"
+                                       FontSize="20" Foreground="Black"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+
+                <Button Margin="20 -10 0 0" Background="Transparent" BorderBrush="Transparent" Click="LoyaltyCard_ButtonClick">
+                    <Border CornerRadius="20" Width="200" Height="130" HorizontalAlignment="Left"
+                            BorderBrush="White" BorderThickness="3">
+                        <Border.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#E30E0E" Offset="0.2"/>
+                                <GradientStop Color="#E56A19" Offset="0.5"/>
+                                <GradientStop Color="#E0E519" Offset="0.7"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Image Source="/Image/icon_card.png" Width="50" Height="50" Margin="0 0 0 0"/>
+                            <TextBlock Text="Карта лояльности" 
+                                       HorizontalAlignment="Center" FontWeight="ExtraBold"
+                                       Style="{StaticResource TextBlockInfo}"
+                                       FontSize="20" Foreground="Black"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+
+                <!--<Button Margin="20 0 0 0 " Background="Transparent" BorderBrush="Transparent" Click="DoctorsList_ButtonClick">
+                    <Border CornerRadius="20" Width="150" Height="140" Margin="0 0 0 0" Background="#5ae675" HorizontalAlignment="Left">
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                            <Image Source="/Image/122_icon.png" Width="40" Height="40"/>
+                            <TextBlock Text="Как происходит" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockInfo}"
+                                       FontSize="14" Foreground="Black"/>
+                            <TextBlock Text="запись через службу" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockInfo}"
+                                       FontSize="14" Foreground="Black"/>
+                            <TextBlock Text="122" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockInfo}"
+                                       FontSize="18" Foreground="Red" FontWeight="ExtraBold"/>
+                        </StackPanel>
+                    </Border>
+                </Button>-->
+
+                <!--<Border CornerRadius="20" Width="150" Height="140" Margin="20 0 0 0" Background="#d3e65a"
+                   HorizontalAlignment="Left">
+                    </Border>-->
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

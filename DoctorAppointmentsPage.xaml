@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="PolyclinicProjectKurs.DoctorAppointmentsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PolyclinicProjectKurs"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="#18181f">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Информация о пациенте -->
+            <StackPanel Grid.Row="0" Margin="10" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding User.Usersurname}" FontSize="20" Foreground="#4B45D6" FontWeight="Bold"/>
+                    <TextBlock Text=" "/>
+                    <TextBlock Text="{Binding User.Username}" FontSize="20" Foreground="#4B45D6" FontWeight="Bold"/>
+                    <TextBlock Text=" "/>
+                    <TextBlock Text="{Binding User.Userpatronymicname}" FontSize="20" Foreground="#4B45D6" FontWeight="Bold"/>
+                </StackPanel>
+                <TextBlock Text="{Binding User.Birthdate, StringFormat=Дата рождения: {0:dd.MM.yyyy}}" Foreground="White"/>
+                <TextBlock Text="{Binding User.Snils, StringFormat=СНИЛС: {0}}" Foreground="White"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Адрес проживания: " Foreground="White"/>
+                    <TextBlock Text="{Binding User.Userstreet}" Foreground="White"/>
+                    <TextBlock Text="{Binding User.Userhome, StringFormat= дом {0}}" Foreground="White"/>
+                    <TextBlock Text="{Binding User.Userflat, StringFormat= кв.{0}}" Foreground="White"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Список посещений -->
+            <ListBox Grid.Row="1" Margin="20" BorderThickness="2" BorderBrush="White" Background="Transparent" 
+         ItemsSource="{Binding DoctorAppointmentsCollection}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Appointmenttime, StringFormat= Дата посещения: {0:dd.MM.yyyy}}" Foreground="#4B45D6"/>
+                            </StackPanel>
+
+                            <!-- Проверьте, что Medicalrecords содержит данные -->
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Диагноз: " Foreground="White"/>
+                                <TextBlock Text="{Binding Medicalrecords[0].Diagnosis}" Foreground="#4B45D6"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Жалобы: " Foreground="White"/>
+                                <TextBlock Text="{Binding Medicalrecords[0].Complaints}" Foreground="#4B45D6"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Схема лечения: " Foreground="White"/>
+                                <TextBlock Text="{Binding Medicalrecords[0].TreatmentRegimen}" Foreground="#4B45D6"/>
+                            </StackPanel>
+
+                            <Button Content="Изменить диагноз" Background="#4B45D6" Foreground="White" FontWeight="Bold"
+                        Click="ChangeDiagnosisButton_Click" Margin="0 5 0 0"/>
+                            <Separator Background="Transparent" Height="10"/>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+
+            <!-- Кнопка Назад -->
+            <Button Content="Назад" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 20 0"
+                    Background="#4B45D6" Foreground="White" Click="BackButton_Click" FontSize="20" Width="100" FontWeight="ExtraBold"/>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="PolyclinicProjectKurs.Contacts"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PolyclinicProjectKurs"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="#18181f">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Контакты клиники" Foreground="#4B45D6" FontWeight="ExtraBold" Margin="20 10 0 0" FontSize="25" Grid.Row="0"/>
+
+            <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Row="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Margin="20 10 10 10">
+                        <TextBlock Text="Местоположение на карте" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left"
+                                   FontSize="21" Margin="20 0 0 0"/>
+                        <Image Source="/Image/map_add.png" HorizontalAlignment="Left" Width="500" Height="300"
+                                   Margin="20 0 0 0"/>
+                    </StackPanel>
+
+                    <Grid Grid.Row="1" Margin="0 10 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="400"/>
+                            <ColumnDefinition Width="350"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Vertical" Grid.Column="0" Margin="10 0 0 0">
+                                <Image Source="Image/icon_address.png" Width="50" Height="50" Margin="0 0 0 10"/>
+                                <Image Source="Image/email_grad.png" Width="50" Height="50"/>
+                            </StackPanel>
+
+                            <WrapPanel Grid.Column="1" Orientation="Vertical" Margin="10 0 0 0">
+                                <TextBlock Text="{Binding Address}" Foreground="White" FontSize="15" TextWrapping="Wrap"
+                                           FontWeight="Bold" Margin="0 0 0 10"/>
+                                <TextBlock Text="{Binding EmailAddress}" Foreground="White" FontSize="15" TextWrapping="Wrap"  
+                                           FontWeight="Bold" Margin="0 20 0 0"/>
+                            </WrapPanel>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Margin="0 0 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Vertical" Grid.Column="0" Margin="0 0 0 0">
+                                <Image Source="Image/call_grad.png" Width="50" Height="50" Margin="0 0 0 10"/>
+                                <Image Source="Image/way.png" Width="50" Height="50"/>
+                            </StackPanel>
+
+                            <WrapPanel Grid.Column="1" Orientation="Vertical" Margin="10 0 20 0">
+                                <TextBlock Text="{Binding RegNumber}" Foreground="White" FontSize="15" TextWrapping="Wrap"
+                                           FontWeight="Bold" Margin="0 0 0 10"/>
+                                <TextBlock Text="{Binding Proezd}" Foreground="White" FontSize="15" TextWrapping="Wrap"  
+                                           FontWeight="Bold" Margin="0 20 0 0"/>
+                            </WrapPanel>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</UserControl>

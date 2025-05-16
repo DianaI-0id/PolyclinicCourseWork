@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="PolyclinicProjectKurs.CallDoctorAtHome"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PolyclinicProjectKurs"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="900">
+    <Grid>
+        <Border Background="#18181f">
+            <Grid ShowGridLines="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--Верхняя панель-->
+                <StackPanel Grid.Row="0">
+                    <TextBlock Text="Вызов врача на дом" Margin="0 10 0 0"
+                   Style="{StaticResource TextBlockInfo}"
+                   FontSize="25"/>
+                </StackPanel>
+
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Row="1" Margin="10">
+                    <Border Grid.Row="1" BorderBrush="White" BorderThickness="2" >
+                        <Grid ShowGridLines="False">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200*"/>
+                                <ColumnDefinition Width="225*"/>
+                                <ColumnDefinition Width="208*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Row="0">
+                                <TextBlock Text="Данные пациента" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left"
+               Margin="10 5 0 0" FontSize="18" Foreground="#4B45D6"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" Grid.Column="0" Margin="0,30,0,41" Grid.RowSpan="3">
+                                <TextBlock Text="ФАМИЛИЯ" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                                <TextBlock Text="ИМЯ" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                                <TextBlock Text="ОТЧЕСТВО" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                                <TextBlock Text="ТЕЛЕФОН" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                                <TextBlock Text="ПОЧТА" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                                <TextBlock Text="ДАТА РОЖДЕНИЯ" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                                <TextBlock Text="ПОЛ" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                                <TextBlock Text="СНИЛС" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                                <TextBlock Text="Место и дата вызова" Style="{StaticResource TextBlockInfo}" FontSize="18" 
+                                           HorizontalAlignment="Left" Margin="10 10 0 0" Foreground="#4B45D6" Grid.ColumnSpan="3"/>
+
+                                <TextBlock Text="НАСЕЛЕННЫЙ ПУНКТ" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                                <TextBlock Text="ВВЕДИТЕ УЛИЦУ" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                                <TextBlock Text="ДОМ" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                                <TextBlock Text="КВАРТИРА" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                                <TextBlock Text="КОРПУС" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                                <TextBlock Text="ПРИЧИНА ВЫЗОВА" Style="{StaticResource TextBlockInfo}" HorizontalAlignment="Left" Margin="20 10 0 0"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" Grid.ColumnSpan="3" Margin="150,30,208,41" Grid.RowSpan="3">
+                                <TextBox Width="200" Margin="0 10 0 0" HorizontalAlignment="Stretch" Height="16" Foreground="White"
+             Text="{Binding Usersurname}" Background="Transparent" BorderBrush="White" BorderThickness="1" Name="surnametext"/>
+
+                                <TextBox Width="200" Margin="0 10 0 0" HorizontalAlignment="Stretch" Height="16" Foreground="White"
+             Text="{Binding Username}" Background="Transparent" BorderBrush="White" BorderThickness="1"  Name="nametext"/>
+
+                                <TextBox Width="200" Margin="0 10 0 0" HorizontalAlignment="Stretch" Height="16" Foreground="White"
+             Text="{Binding Userpatronymicname}" Background="Transparent" BorderBrush="White" BorderThickness="1"  Name="patronymictext"/>
+
+                                <TextBox Width="200" Margin="0 10 0 0" HorizontalAlignment="Stretch" Height="16" Foreground="White"
+             Text="{Binding Userphone}" Background="Transparent" BorderBrush="White" BorderThickness="1"  Name="phonetext"/>
+
+                                <TextBox Width="200" Margin="0 10 0 0" HorizontalAlignment="Stretch" Height="16" Foreground="White"
+             Text="{Binding Useremail}" Background="Transparent" BorderBrush="White" BorderThickness="1"  Name="emailtext"/>
+
+                                <DatePicker Width="200" Margin="0 10 0 0" HorizontalAlignment="Stretch" Foreground="Black"
+             Text="{Binding Birthdate}" Background="Transparent" BorderBrush="White" BorderThickness="1"  Name="birtdatetext"/>
+
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+                                    <RadioButton x:Name="MaleRadioButton" Content="Мужской" Margin="0,0,10,0" Foreground="White"/>
+                                    <RadioButton x:Name="FemaleRadioButton" Content="Женский" Margin="0,0,10,0" Foreground="White"/>
+                                </StackPanel>
+
+                                <TextBox Width="200" Margin="0 10 0 0" HorizontalAlignment="Stretch" Height="16" Foreground="White"
+             Text="{Binding Snils}" Background="Transparent" BorderBrush="White" BorderThickness="1"  Name="snilstext"/>
+
+                                <TextBox Width="200" Margin="0 40 0 0" HorizontalAlignment="Stretch" Height="16" Foreground="White"
+Text="{Binding City}" Background="Transparent" BorderBrush="White" BorderThickness="1"  Name="citytext"/>
+
+                                <TextBox Width="200" Margin="0 9 0 0" HorizontalAlignment="Stretch" Height="16" Foreground="White"
+Text="{Binding Street}" Background="Transparent" BorderBrush="White" BorderThickness="1"  Name="streettext"/>
+
+                                <TextBox Width="200" Margin="0 9 0 0" HorizontalAlignment="Stretch" Height="16" Foreground="White"
+Text="{Binding HouseNumber}" Background="Transparent" BorderBrush="White" BorderThickness="1"  Name="housenumbertext"/>
+
+                                <TextBox Width="200" Margin="0 9 0 0" HorizontalAlignment="Stretch" Height="16" Foreground="White"
+Text="{Binding FlatNumber}" Background="Transparent" BorderBrush="White" BorderThickness="1"  Name="flatnumbertext"/>
+
+                                <TextBox Width="200" Margin="0 9 0 0" HorizontalAlignment="Stretch" Height="16" Foreground="White"
+Text="{Binding Korpus}" Background="Transparent" BorderBrush="White" BorderThickness="1" Name="korpustext"/>
+
+                                <TextBox Width="200" Margin="0 9 0 0" HorizontalAlignment="Stretch" Height="50" Foreground="White"
+Text="{Binding CallReason}" Background="Transparent" BorderBrush="White" BorderThickness="1" Name="callreasontext"/>
+
+                                <DatePicker Width="200" Margin="0 10 0 0" HorizontalAlignment="Stretch" Foreground="Black" Background="Transparent" BorderBrush="White" BorderThickness="1"  Name="appointmdate"/>
+                            </StackPanel>
+
+                        </Grid>
+                    </Border>
+                </ScrollViewer>
+               
+
+                <Border Grid.Row="2" Grid.Column="2" CornerRadius="10" Background="#4B45D6" Grid.ColumnSpan="2">
+                    <Button Background="Transparent" Content="ОСТАВИТЬ ЗАЯВКУ" BorderBrush="Transparent" BorderThickness="0"
+                    Foreground="White" FontSize="13" FontWeight="Bold" Click="OstavitZayavku_ButtonClick">
+                    </Button>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

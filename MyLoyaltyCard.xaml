@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="PolyclinicProjectKurs.MyLoyaltyCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PolyclinicProjectKurs"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="900">
+    <Border Background="#18181f">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Карта лояльности" Foreground="#4B45D6" FontSize="25" FontWeight="ExtraBold" Margin="10 10 0 0"
+                       Grid.Row="0"/>
+
+            <ScrollViewer Grid.Row="1">
+                <Grid Grid.Row="1" ShowGridLines="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" ShowGridLines="False">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0" Background="#4B45D6" Margin="10 10 10 10" CornerRadius="10" Height="200">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Ваша карта" Margin="10" FontSize="18" FontWeight="ExtraBold" Foreground="White"/>
+
+                                <!--нужна таблица для карты лояльности для каждого-->
+                                <TextBlock Text="{Binding card_number}" FontSize="20" FontWeight="Bold" Foreground="Black" Margin="10 0 10 0"
+                                           Background="White"/>
+
+                                <WrapPanel Orientation="Horizontal" Margin="0 25 0 0">
+                                    <TextBlock Text="ПОСЕЩЕНИЙ: " Margin="10 5 5 0" Foreground="White"  FontSize="15" FontWeight="ExtraBold"/>
+                                    <TextBlock Text="{Binding appointment_count}" Margin="0 0 10 0" Foreground="White"  FontSize="18" FontWeight="ExtraBold"/>
+                                </WrapPanel>
+
+                                <WrapPanel Orientation="Horizontal" Margin="0 0 0 0">
+                                    <TextBlock Text="БАЛЛОВ: " Margin="10 5 5 0" Foreground="White"  FontSize="15" FontWeight="ExtraBold"/>
+                                    <TextBlock Text="{Binding points}" Margin="0 2 10 0" Foreground="White"  FontSize="18" FontWeight="ExtraBold"/>
+                                </WrapPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="10 10 10 0">
+                                    <TextBlock Text="СКИДКА " FontSize="20" FontWeight="ExtraBold" Foreground="White"/>
+                                    <TextBlock Text="{Binding card_sale, StringFormat={}{0} %}" FontSize="20" FontWeight="ExtraBold" Foreground="White" />
+                                </StackPanel>
+
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <StackPanel Orientation="Vertical" Grid.Row="1">
+                        <Separator Margin="10 10 10 10" Foreground="White" Height="20"/>
+                        <TextBlock Text="Правила использования" FontSize="20" Foreground="White" Margin="10 0 10 0" FontWeight="ExtraBold"/>
+
+                        <Border BorderBrush="#4B45D6" BorderThickness="2" CornerRadius="10" Margin="10 20 10 10">
+                            <StackPanel Orientation="Vertical">
+
+                                <WrapPanel Orientation="Horizontal" Margin="10 10 10 0">
+                                    <Image Source="Image/conditions_grad.png" Width="40" Height="40"/>
+                                    <TextBlock Text="1 посещение - 1 балл" Foreground="#4B45D6" FontWeight="Bold" Margin="10 5 10 0" FontSize="18"/>
+                                </WrapPanel>
+
+                                <TextBlock Text="За каждое посещение вам начисляется 1 балл. При накоплении 10 баллов вы можете посетить любого врача бесплатно"
+                                           FontWeight="Bold" FontSize="17" Foreground="White" Margin="10 5 10 10"
+                                           TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border BorderBrush="#4B45D6" BorderThickness="2" CornerRadius="10" Margin="10 20 10 10">
+                            <StackPanel Orientation="Vertical">
+                                
+                                <WrapPanel Orientation="Horizontal" Margin="10 10 10 0">
+                                    <Image Source="Image/sale_grad.png" Width="40" Height="40"/>
+                                    <TextBlock Text="Больше посещений - больше скидка" Foreground="#4B45D6" FontWeight="Bold" Margin="10 5 10 0" FontSize="18"/>
+                                </WrapPanel>
+
+                                <TextBlock Text="Чем больше посещений, тем выше скидка: " FontWeight="Bold" FontSize="18" Foreground="White" Margin="10 5 10 0"
+                                           TextWrapping="Wrap"/>
+
+                                <TextBlock Text="1. От 5 посещений скидка 3%" FontWeight="Bold" FontSize="17" Foreground="White" Margin="10 5 10 0"
+                                           TextWrapping="Wrap"/>
+                                <TextBlock Text="2. От 15 посещений скидка 6%" FontWeight="Bold" FontSize="17" Foreground="White" Margin="10 5 10 0"
+                                           TextWrapping="Wrap"/>
+                                <TextBlock Text="2. От 20 и выше скидка 10%" FontWeight="Bold" FontSize="17" Foreground="White" Margin="10 5 10 10"
+                                           TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Border>
+
+
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</UserControl>
